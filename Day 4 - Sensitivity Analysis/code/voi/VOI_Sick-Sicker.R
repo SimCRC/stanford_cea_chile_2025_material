@@ -23,8 +23,8 @@ library(reshape2)
 library(mgcv) # For fitting splines
 
 #### Load VOI Functions ####
-source("R-labs/value-of-information/VOI_Functions.R")
-source("R-labs/value-of-information/GA_functions.R")
+source("code/voi/VOI_Functions.R")
+source("code/voi/GA_functions.R")
 
 #### Simple Example: WTP = $50,000/QALY ####
 ## Load simulation file
