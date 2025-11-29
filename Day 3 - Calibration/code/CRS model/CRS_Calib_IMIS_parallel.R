@@ -1,6 +1,5 @@
 # *****************************************************************************
 #
-# Script: CRS_Calibration_IMIS_Parallel.R
 #
 # Purpose: Bayesian calibration of the 3-State Cancer Relative Survival (CRS) 
 #          Markov Model using Incremental Mixture Importance Sampling (IMIS)

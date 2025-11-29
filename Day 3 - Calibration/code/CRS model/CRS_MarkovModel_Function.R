@@ -1,6 +1,5 @@
 # *****************************************************************************
 #
-# Script: CRS_MarkovModel_Function.R
 #
 # Purpose: Define the 3-State Cancer Relative Survival (CRS) Markov Model
 #          as a function for use in calibration exercises

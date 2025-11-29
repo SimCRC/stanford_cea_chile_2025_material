@@ -1,6 +1,5 @@
 # *****************************************************************************
 #
-# Script: CRS_Calibration_NelderMead.R
 #
 # Purpose: Calibration of the 3-State Cancer Relative Survival (CRS) 
 #          Markov Model using Nelder-Mead directed search algorithm

@@ -1,6 +1,5 @@
 # *****************************************************************************
 #
-# Script: CRS_Calibration_RandomSearch.R
 #
 # Purpose: Calibration of the 3-State Cancer Relative Survival (CRS) 
 #          Markov Model using random search with Latin Hypercube Sampling
