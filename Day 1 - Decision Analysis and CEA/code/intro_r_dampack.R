@@ -6,15 +6,15 @@
 #          of basic operations, package installation, data exploration, and
 #          cost-effectiveness analysis with health economics examples.
 #
-# Authors: 
 # This work is developed for the Decision Sciences Methods course at:
 # Stanford University and Universidad de Chile
 #
-# - Fernando Alarid-Escudero, PhD
-# - Jeremy D. Goldhaber-Fiebert, PhD
+# Contributors:
 # - Jorge Roa, MSc
+# - Jeremy D. Goldhaber-Fiebert, PhD
+# - Fernando Alarid-Escudero, PhD
 #
-# Course: Laboratorio en R: Proyecto y Costo-efectividad incremental
+# Course: Laboratorio en R: Costo-efectividad incremental
 # Module: Introduction to R and RStudio
 #
 # *****************************************************************************
@@ -96,11 +96,13 @@ pacman::p_load(
   scatterplot3d,  # 3D visualization (scatter plots)
   ggplot2,        # general plotting (grammar of graphics)
   GGally,         # ggplot2 extensions (correlation plots, pairs, etc.)
-  dplyr           # data manipulation (filter, mutate, summarise, etc.)
+  dplyr,          # data manipulation (filter, mutate, summarise, etc.)
+  readxl          # to read and write excel files
 )
 
 # Install IMIS from CRAN archive (only if not already installed)
-devtools::install_version( "IMIS", version = "0.1", repos = "http://cran.us.r-project.org" )
+devtools::install_version( "IMIS", version = "0.1", 
+                           repos = "http://cran.us.r-project.org" )
 
 ### 02.02 Loading Packages -----------------------------------------------------
 # Load the packages (you need to do this **every time** you start a new R session)
@@ -125,6 +127,7 @@ library(dplyr)         # for data manipulation (filter, mutate, etc.)
 library(tidyverse)
 library(dampack)
 library(tidyverse)
+library(readxl)
 # You should see messages about the packages loaded
 
 
@@ -150,7 +153,7 @@ str(df_lifetable_chile)
 # Get summary statistics for all variables
 summary(df_lifetable_chile)
 
-# View first few rows
+# View first 6 rows
 head(df_lifetable_chile)
 
 
@@ -218,7 +221,7 @@ df_lifetable_chile_f_sum <- df_lifetable_chile_f %>%
   )
 
 # Summary by 5-year age groups
-df_lifetable_chile_f_sum_5y <- df_lifetable_chile_f_sum%>%
+df_lifetable_chile_f_sum_5y <- df_lifetable_chile_f_sum %>%
   group_by(age_group_5yr) %>%
   summarise(
     total_deaths = sum(total_deaths),
@@ -251,7 +254,9 @@ ggplot(df_lifetable_chile_f_sum %>% filter(!is.na(age)),
     subtitle = "Ages 0 to 100 (100+ grouped together)",
     x = "Age (years)",
     y = "Number of Deaths",
-    caption = paste0("Total deaths: ", format(sum(df_lifetable_chile_f_sum$Casos, na.rm = TRUE), big.mark = ","),
+    caption = paste0("Total deaths: ", 
+                     format(sum(df_lifetable_chile_f_sum$Casos, na.rm = TRUE), 
+                            big.mark = ","),
                      "\nNote: Age 0 includes all deaths under 1 year (hours, days, months)")
   ) +
   theme_minimal() +
