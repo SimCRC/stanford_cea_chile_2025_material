@@ -213,6 +213,23 @@ for (j in 1:n_init) {
                                         maxit = 1000), 
                          hessian = TRUE)
   m_calib_res[j, ] <- c(l_fit_nm[[j]]$par, l_fit_nm[[j]]$value)
+  
+  ### to use a simulated annealing instead ###
+  # fit_sa <- optim(v_params_init[j,], f_gof,
+  #                method = c("SANN"),  # switches to using simulated annealing
+  #                control = list(temp = 10, tmax = 10, # algorithm tuning parameters
+  #                               fnscale = -1, maxit = 1000),
+  #                hessian = T)
+  # m_calib_res[j,] = c(fit_sa$par,fit_sa$value)
+  
+  ### to use a genetic algorithm instead ###
+  # library(DEoptim)
+  # f_fitness <- function(params){
+  #   names(params) = v_param_names
+  #   return(-f_gof(params))}
+  # fit_ga = DEoptim(f_fitness, lower=lb, upper=ub)
+  # m_calib_res[j,] = c(fit_ga$optim$bestmem,-1*fit_ga$optim$bestval)
+  
 }
 
 ### 07.05 Calculate computation time  ------------------------------------------
