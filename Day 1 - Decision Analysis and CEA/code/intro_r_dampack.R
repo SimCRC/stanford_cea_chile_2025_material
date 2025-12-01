@@ -40,6 +40,10 @@
 #
 # *****************************************************************************
 
+#Execute code in R
+
+#Command + Enter (Mac) or Ctrl + Enter (PC) to run each line
+
 # 01 Basic R Operations --------------------------------------------------------
 
 ## 01.01 Simple Calculations ---------------------------------------------------
@@ -49,6 +53,25 @@
 2 + 2
 10 * 5
 100 / 4
+
+## 01.02 Creating Objects ------------------------------------------------------
+
+# Assign values to objects using <-
+
+#Command + Shift + M to create the <- operator in Mac
+#Ctrl + Shift + M to create the <- operator in PC
+
+a <- 10
+
+b <- 5
+
+# Perform operations using objects
+
+c <- a + b
+
+# View the value of an object by typing its name
+
+c
 
 # 02 Installing and Loading Packages -------------------------------------------
 
@@ -79,9 +102,7 @@
 
 
 # Use pacman to install (if needed) and load all required packages
-pacman::p_load(
-  dampack,        # cost-effectiveness analysis package
-  darthtools,     # DARTH tools package
+pacman::p_load(       
   lhs,            # Latin Hypercube Sampling
   devtools,       # development tools; used to install IMIS from archive
   matrixStats,    # fast summary statistics on matrices
@@ -93,6 +114,16 @@ pacman::p_load(
   dplyr,          # data manipulation (filter, mutate, summarise, etc.)
   readxl          # to read and write excel files
 )
+
+install.packages("cli") #For windows support. 
+install.packages("dampack") #For windows support. 
+devtools::install_github("DARTH-git/darthtools")
+
+
+library(cli)
+library(dampack) # cost-effectiveness analysis package
+library(darthtools) # DARTH tools package
+
 
 # Install IMIS from CRAN archive (only if not already installed)
 devtools::install_version( "IMIS", version = "0.1", 
