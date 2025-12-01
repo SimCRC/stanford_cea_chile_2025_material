@@ -100,8 +100,13 @@ c
 #   "dplyr"          # data manipulation
 # ))
 
+install.packages("cli") #For windows support. 
+install.packages("rlang") # package management tool
 install.packages("devtools") # development tools; used to install IMIS from archive
+install.packages("pacman") # development tools; used to install IMIS from archive
 
+install.packages("dampack") #For windows support. 
+devtools::install_github("DARTH-git/darthtools")
 library(devtools)
 
 # Use pacman to install (if needed) and load all required packages
@@ -117,10 +122,6 @@ pacman::p_load(
   readxl          # to read and write excel files
 )
 
-
-install.packages("cli") #For windows support. 
-install.packages("dampack") #For windows support. 
-devtools::install_github("DARTH-git/darthtools")
 
 
 library(cli)
