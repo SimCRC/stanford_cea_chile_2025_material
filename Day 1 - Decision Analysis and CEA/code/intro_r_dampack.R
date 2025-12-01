@@ -1,4 +1,3 @@
-# Script: intro_to_r_health_economics.R
 #
 # 00 Script Metadata and Context -----------------------------------------------
 #
