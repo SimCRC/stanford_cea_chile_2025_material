@@ -225,8 +225,8 @@ u_D     <- 0     # annual utility of being dead
 u_trtAB <- 0.95  # annual utility when receiving treatment AB
 
 ### 04.09 Discount weight for costs and effects  -------------------------------
-v_dwc   <- 1 / ((1 + (d_e * cycle_length)) ^ (0:n_cycles))
-v_dwe   <- 1 / ((1 + (d_c * cycle_length)) ^ (0:n_cycles))
+v_dwc   <- 1 / ((1 + (d_c * cycle_length)) ^ (0:n_cycles))
+v_dwe   <- 1 / ((1 + (d_e * cycle_length)) ^ (0:n_cycles))
 
 ### 04.10 Process model inputs  ------------------------------------------------
 ## Cycle-specific transition probabilities to the Dead state 
