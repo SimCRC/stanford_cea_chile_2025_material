@@ -97,10 +97,10 @@ v_costs     <- c(c_H, c_S, c_D)         # All costs
 v_utilities <- c(u_H, u_S, u_D)         # All utilities
 
 # Calculate discount weights for costs for each cycle based on discount rate d_c
-v_dwc <- 1 / (1 + d_e) ^ (0:n_t) 
+v_dwc <- 1 / (1 + d_c) ^ (0:n_t) 
 
 # Calculate discount weights for effectiveness for each cycle based on discount rate d_e
-v_dwe <- 1 / (1 + d_c) ^ (0:n_t) 
+v_dwe <- 1 / (1 + d_e) ^ (0:n_t) 
 
 ## Draw the state-transition cohort model
 m_P_diag <- matrix(0, 
@@ -142,7 +142,7 @@ m_M <- matrix(NA,
               dimnames = list(0:n_t, v_n))
 
 # Initialize first cycle of Markov trace
-m_M[1, ] <- c(1, 0, 0)
+m_M[1, ] <- c(H = 1, S = 0, D = 0)
 
 #******************************************************************************
 #### 04.2 Transition probability matrix ####
@@ -178,9 +178,9 @@ rowSums(m_P)
 #******************************************************************************
 
 # Loop through the number of cycles
-for (t in 1:n_t) {
+for (t in 1:n_t) { # t <- 2
   # Estimate the state vector for the next cycle (t + 1)
-  m_M[t + 1, ] <- m_M[t, ] %*% m_P  
+  m_M[t + 1, ] <- m_M[t, ] %*% m_P
 }
 
 #******************************************************************************
@@ -289,7 +289,8 @@ n_te_d <-  t(v_tu) %*% v_dwe
 #### 07.3 Results ####
 #******************************************************************************
 
-results <- data.frame( "Total Discounted Cost" = n_tc_d, 
+results <- data.frame( "Strategy" = v_names_str,
+                       "Total Discounted Cost" = n_tc_d, 
                        "Life Expectancy" = v_le, 
                        "Total Discounted QALYs" = n_te_d, 
                        check.names = F)
