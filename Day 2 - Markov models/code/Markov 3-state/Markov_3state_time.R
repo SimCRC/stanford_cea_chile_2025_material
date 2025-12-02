@@ -107,10 +107,10 @@ v_costs     <- c(c_H, c_S, c_D)                # All costs
 v_utilities <- c(u_H, u_S, u_D)                # All utilities
 
 # Calculate discount weights for costs for each cycle based on discount rate d_c
-v_dwc <- 1 / (1 + d_e) ^ (0:n_t)
+v_dwc <- 1 / (1 + d_c) ^ (0:n_t)
 
 # Calculate discount weights for effectiveness for each cycle based on discount rate d_e
-v_dwe <- 1 / (1 + d_c) ^ (0:n_t)
+v_dwe <- 1 / (1 + d_e) ^ (0:n_t)
 
 ## Draw the state-transition cohort model
 m_P_diag <- matrix(0,

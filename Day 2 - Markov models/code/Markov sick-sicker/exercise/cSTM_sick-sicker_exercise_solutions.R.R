@@ -342,7 +342,7 @@ m_P["Sicker", "Dead"]    <-     p_S2D
 m_P["Dead", "Dead"]      <- 1
 
 ### 08.03 Initialize transition probability matrix for strategy AB  ------------
-m_P_strAB <- m_P
+m_P_strAB <- m_P # start with the same as for SoC
 
 ### 08.04 Update only transition probabilities from S1 involving p_S1S2  -------
 # Update only transition probabilities from S1 involving p_S1S2

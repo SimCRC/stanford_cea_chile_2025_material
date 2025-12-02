@@ -120,10 +120,10 @@ v_costs     <- c(c_H, c_S, c_D)             # All costs
 v_utilities <- c(u_H, u_S, u_D)             # All utilities
 
 # Calculate discount weights for costs for each cycle based on discount rate d_c
-v_dwc <- 1 / (1 + d_e) ^ (0:n_t) 
+v_dwc <- 1 / (1 + d_c) ^ (0:n_t) 
 
 # Calculate discount weights for effectiveness for each cycle based on discount rate d_e
-v_dwe <- 1 / (1 + d_c) ^ (0:n_t) 
+v_dwe <- 1 / (1 + d_e) ^ (0:n_t) 
 
 #******************************************************************************
 #### 04 Define and initialize matrices and vectors ####
@@ -164,11 +164,11 @@ for (i in 1:(n_tunnel_size - 1)) { #i=1
   a_P[v_sick_tunnels[i], "Dead", ] <- v_p_SD_tunnels[i]
 }
 
-# From Sick_60Yr to Sick Sick_60Yr
+# From Sick_75Yr to Sick Sick_75Yr
 a_P[v_sick_tunnels[n_tunnel_size], 
     v_sick_tunnels[n_tunnel_size], ] <- 1 - v_p_SD_tunnels[n_tunnel_size]
 
-# From Sick_60Yr to Death
+# From Sick_75Yr to Death
 a_P[v_sick_tunnels[n_tunnel_size], "Dead", ] <- v_p_SD_tunnels[n_tunnel_size]
 
 # From Dead
