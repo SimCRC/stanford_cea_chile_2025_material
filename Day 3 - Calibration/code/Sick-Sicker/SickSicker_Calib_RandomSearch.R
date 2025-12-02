@@ -130,7 +130,7 @@ set.seed(072218) # For reproducible sequence of random numbers
 n_samp <- 1000
 
 # names and number of input parameters to be calibrated
-v_param_names <- c("p_S1S2","hr_S1","hr_S2")
+v_param_names <- c("p_S1S2", "hr_S1", "hr_S2")
 n_param <- length(v_param_names)
 
 # Search space bounds
