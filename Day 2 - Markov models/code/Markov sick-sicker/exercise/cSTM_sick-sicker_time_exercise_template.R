@@ -246,8 +246,8 @@ u_trtAB <- 0.95  # annual utility when receiving treatment AB
 
 ### 06.02 Create vectors of state costs and utilities  --------------------------
 ### Discount weight for costs and effects 
-v_dwc   <- 1 / ((1 + (d_e * cycle_length)) ^ (0:n_cycles))
-v_dwe   <- 1 / ((1 + (d_c * cycle_length)) ^ (0:n_cycles))
+v_dwc   <- 1 / ((1 + (d_c * cycle_length)) ^ (0:n_cycles))
+v_dwe   <- 1 / ((1 + (d_e * cycle_length)) ^ (0:n_cycles))
 
 ### 06.03 Process model inputs  ----------------------------------------------------
 ## Age-specific transition rates to the Dead state for all cycles 
