@@ -107,7 +107,7 @@ hr_S2  <- 10    # hazard ratio of death in Sicker vs Healthy
 hr_S1S2_trtAB <- 0.6  # hazard ratio of becoming Sicker when Sick under treatment AB
 
 ## Age-dependent mortality rates 
-lt_usa_2015 <- read.csv("R-labs/sensitivity-analysis/HMD_USA_Mx_2015.csv")
+lt_usa_2015 <- read.csv("data/HMD_USA_Mx_2015.csv")
 # Extract age-specific all-cause mortality for ages in model time horizon
 v_r_mort_by_age <- lt_usa_2015 %>% 
   dplyr::filter(Age >= n_age_init & Age < n_age_max) %>%
@@ -401,7 +401,7 @@ plot(df_cea, label = "all", txtsize = 16) +
 #' 
 ## -------------------------------------------------------------------------------
 ## Load model, CEA and PSA functions 
-source('R-labs/sensitivity-analysis/Functions_markov_sick-sicker_time.R')
+source('code/Functions_markov_sick-sicker_time.R')
 
 #' 
 #' ## 10.1 Model input for SA
