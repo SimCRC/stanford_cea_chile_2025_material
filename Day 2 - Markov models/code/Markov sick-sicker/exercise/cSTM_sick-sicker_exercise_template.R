@@ -5,18 +5,11 @@
 # Purpose: Implement and test the time-independent Markov Sick-Sicker 
 #          cohort state-transition model for cost-effectiveness analysis (CEA).
 #
-# Authors: 
-# This work is developed by the Decision Analysis in R for Technologies in Health 
-# (DARTH) workgroup:
-#
-# - Fernando Alarid-Escudero, PhD
-# - Eva A. Enns, MS, PhD 
-# - M.G. Myriam Hunink, MD, PhD 
-# - Hawre J. Jalal, MD, PhD 
-# - Eline Krijkamp, PhD 
-# - Petros Pechlivanoglou, PhD
-# - Alan Yang, MSc
-#
+# Adapted from:
+# - Alarid-Escudero F, Krijkamp EM, Enns EA, Yang A, Hunink MGM Pechlivanoglou P,
+# Jalal H. A Tutorial on Time-Dependent Cohort State-Transition Models in R using 
+# a Cost-Effectiveness Analysis Example. Medical Decision Making, 2023; 43(1). 
+# <https://doi.org/10.1177/0272989X221121747>
 #
 # *****************************************************************************
 #

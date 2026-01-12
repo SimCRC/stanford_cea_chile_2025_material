@@ -79,7 +79,7 @@ n_str <- length(v_names_str)
 v_n  <- c("Healthy", "Sick", "Dead")    # State names
 n_states  <- length(v_n)                # Number of states
 n_age_init <- 25  # age at baseline
-n_age_max  <- 100 # maximum age of follow up
+n_age_max  <- 65  # maximum age of follow up
 n_t        <- n_age_max - n_age_init # Number of cycles
 
 # *p_HD <- 0.05                                 # Probability to die when healthy
